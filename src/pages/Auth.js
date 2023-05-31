@@ -58,6 +58,7 @@ function Auth() {
         localStorage.setItem("userStatus", res.data.userStatus);
         localStorage.setItem("token", res.data.accessToken);
         localStorage.setItem("userType", res.data.userType);
+        window.location.reload();
       })
       .catch((err) => setMessage(err.response.data.message));
   }

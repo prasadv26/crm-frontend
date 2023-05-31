@@ -1,8 +1,28 @@
+import SideBar from "../components/SideBar";
+import { useEffect, useState } from "react";
+import { getAllTickets } from "../api/ticket";
+import TicketStatusDashboard from "../components/TicketStatusDashboard";
+
 function Engineer() {
+  const [ticketDetails, setTicketDetails] = useState([]);
+
+  useEffect(() => {
+    getAllTickets()
+      .then((res) => {
+        setTicketDetails(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
-    <>
-      <h4>Engineer</h4>
-    </>
+    <div className="row bg-light">
+      <div className="col-1">
+        <SideBar />
+      </div>
+      <div className="col my-4">
+        <TicketStatusDashboard ticketDetails={ticketDetails} />
+      </div>
+    </div>
   );
 }
 
