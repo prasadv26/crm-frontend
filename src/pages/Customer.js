@@ -1,7 +1,7 @@
-import SideBar from "../components/SideBar";
+import SideBar from "../components/SideBar/SideBar";
 import { useEffect, useState } from "react";
 import { getAllTickets } from "../api/ticket";
-import TicketStatusDashboard from "../components/TicketStatusDashboard";
+import TicketStatusDashboard from "../components/TicketStatusDashboard/TicketStatusDashboard";
 
 function Customer() {
   const [ticketDetails, setTicketDetails] = useState([]);

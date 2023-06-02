@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import { ticketStatusCount } from "../helpers/ticketHelper";
+import { ticketStatusCount } from "../../helpers/ticketHelper";
 
 const TicketStatusDashboard = ({ ticketDetails }) => {
   const name = localStorage.getItem("name");

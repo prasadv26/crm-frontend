@@ -1,7 +1,8 @@
-import SideBar from "../components/SideBar";
+import SideBar from "../components/SideBar/SideBar";
 import { useEffect, useState } from "react";
 import { getAllTickets } from "../api/ticket";
-import TicketStatusDashboard from "../components/TicketStatusDashboard";
+import TicketStatusDashboard from "../components/TicketStatusDashboard/TicketStatusDashboard";
+import TicketsTable from "../components/TicketsTable/TicketsTable";
 
 function Admin() {
   const [ticketDetails, setTicketDetails] = useState([]);
@@ -21,6 +22,7 @@ function Admin() {
       </div>
       <div className="col my-4">
         <TicketStatusDashboard ticketDetails={ticketDetails} />
+        <TicketsTable />
       </div>
     </div>
   );
